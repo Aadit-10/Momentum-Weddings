@@ -7,16 +7,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".card");
   const imagesContainers = document.querySelectorAll(".card-images");
 
-  function rotateImages(imagesContainer) {
-    const images = imagesContainer.querySelectorAll(".card-img");
+  function rotateImages(imagesContainer, delay) {
+    const images = imagesContainer.querySelectorAll(".carousel-item");
     let currentIndex = 0;
 
     function showImage(index) {
       images.forEach((image, i) => {
         if (i === index) {
-          image.style.opacity = "1"; // Show the selected image
+          image.classList.add("active"); // Show the selected image
         } else {
-          image.style.opacity = "0"; // Hide other images
+          image.classList.remove("active"); // Hide other images
         }
       });
     }
@@ -26,40 +26,12 @@ document.addEventListener("DOMContentLoaded", function () {
       showImage(currentIndex);
     }
 
-    setInterval(nextImage, 1000); // Change image every 1 second
-    showImage(currentIndex); // Show the first image initially
+    setInterval(nextImage, delay);
+    showImage(currentIndex);
   }
 
-  imagesContainers.forEach(rotateImages);
+  // Call rotateImages for each card with a 1-second delay
+  rotateImages(imagesContainers[0], 1000); // 1 second delay for first card
+  rotateImages(imagesContainers[1], 1000); // 2 seconds delay for second card
+  rotateImages(imagesContainers[2], 1000); // 3 seconds delay for third card
 });
-
-
-// sampless
-
-function pathPrepare ($el) {
-  var lineLength = $el[0].getTotalLength();
-  $el.css("stroke-dasharray", lineLength);
-  $el.css("stroke-dashoffset", lineLength);
-}
-
-var $word = $("path#word");
-var $dot = $("path#dot");
-
-// prepare SVG
-pathPrepare($word);
-pathPrepare($dot);
-
-// init controller
-var controller = new ScrollMagic.Controller();
-
-// build tween
-var tween = new TimelineMax()
-  .add(TweenMax.to($word, 0.9, {strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.9
-  .add(TweenMax.to($dot, 0.1, {strokeDashoffset: 0, ease:Linear.easeNone}))  // draw dot for 0.1
-  .add(TweenMax.to("path", 1, {stroke: "#33629c", ease:Linear.easeNone}), 0);			// change color during the whole thing
-
-// build scene
-var scene = new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 200, tweenChanges: true})
-        .setTween(tween)
-        .addIndicators() // add indicators (requires plugin)
-        .addTo(controller);

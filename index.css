@@ -143,8 +143,48 @@ nav a {
 .cards2 {
   display: flex; /* Use flex layout */
   justify-content: space-between; /* Space between the cards */
-  margin-top: -65px; /* Add some spacing */
+  margin-top: 30px;
+  overflow-x: scroll;
+  width: 100%;
+  white-space: nowrap; /* Add some spacing */
   float: left;
+}
+
+.cards2::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.cards2 {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.card2 {
+  flex: 0 0 auto;
+  max-width: 400px;
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.card2 img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.scrolling-container {
+  display: flex;
+  animation: scrollAnimation 20s linear infinite;
+}
+
+@keyframes scrollAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Adjust distance as needed */
+  }
 }
 
 .card {
