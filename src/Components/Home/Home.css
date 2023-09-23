@@ -1,0 +1,335 @@
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Topbar styles */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
+  border-bottom: 2px solid #000;
+  /* Set a high z-index to make sure it's on top of other content */
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: bold;
+  font-family: "Lora", sans-serif;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  font-family: "Lora", sans-serif;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.centeralign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 706px;
+}
+
+/* Apply attractive font */
+.capture p {
+  font-family: "Lora", sans-serif;
+  font-size: 50px;
+  line-height: 1.2;
+  text-align: center;
+}
+.capture {
+  width: 100%;
+  height: 706px;
+  background-color: bisque;
+}
+
+.work {
+  /* display: flex; */
+  align-items: center;
+  margin-top: -px;
+  margin-bottom: 0;
+  padding: 0px 50px;
+  height: 1200px;
+  background: linear-gradient(to bottom, #f0f0f0, #ffffff);
+  float: left;
+}
+
+.textwork {
+  margin-top: 0px;
+  padding-left: 533px;
+  font-family: "Lora", sans-serif;
+  font-size: 50px;
+  color: black;
+  margin-bottom: 30px;
+  padding-top: 163px;
+  float: left;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  float: left;
+}
+
+.card {
+  width: 260px;
+  overflow: hidden;
+  margin: 60px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-height: 400px;
+  float: left;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.carousel {
+  background-color: transparent; /* Set background to transparent */
+}
+.carousel-inner {
+  background-color: transparent; /* Set inner background to transparent */
+}
+.cards2 {
+  display: flex; /* Use flex layout */
+  justify-content: space-between; /* Space between the cards */
+  margin-top: 30px;
+  overflow-x: scroll;
+  width: 100%;
+  white-space: nowrap; /* Add some spacing */
+  float: left;
+}
+
+.cards2::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.cards2 {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.card2 {
+  flex: 0 0 auto;
+  max-width: 400px;
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.card2 img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.scrolling-container {
+  display: flex;
+  animation: scrollAnimation 20s linear infinite;
+}
+
+@keyframes scrollAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Adjust distance as needed */
+  }
+}
+
+.card {
+  float: left;
+  width: 48%; /* Set the width of each card to take up around half of the container */
+}
+
+.about {
+  width: 100%; /* Make the section occupy the full width of the screen */
+  padding: 20px;
+  /* height: 500px; */
+  background-color: #f0f0f0;
+  color: #333;
+  float: left;
+
+  /* Apply responsive styles using media queries */
+  @media (max-width: 768px) {
+    font-size: 14px; /* Reduce font size on smaller screens */
+    padding: 10px;
+    overflow: hidden;
+  }
+}
+.aheading {
+  font-family: "Lora", sans-serif;
+  font-size: 50px;
+  line-height: 1.2;
+  text-align: center;
+  padding-top: 104px;
+  padding-bottom: 60px;
+}
+.aboutpara {
+  padding: 0px 115px;
+  text-align: justify;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-left: 103px;
+}
+.services {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+
+.service-card {
+  width: 430px;
+  box-sizing: border-box;
+
+  border-radius: 20px; /* Curved edges */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.service-card img {
+  width: 372px;
+  height: 377px;
+  object-fit: cover;
+  border-radius: 20px; /* Match card's border-radius for image edges */
+}
+
+.service-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center-align items vertically */
+}
+
+/* Apply responsive styles using media queries */
+@media screen and (max-width: 768px) {
+  .service-card {
+    padding: 10px; /* Reduce padding on smaller screens */
+  }
+
+  .service-card img {
+    height: 200px;
+  }
+}
+.service-text {
+  display: flex; /* Use flexbox to display divs side by side */
+  justify-content: space-between; /* Add space between divs */
+  padding: 0px 83px;
+  text-align: justify;
+}
+
+.w-text {
+  width: calc(33.33% - 62px);
+  font-family: "Lora", sans-serif;
+  padding: 20px; /* Adjust padding for spacing */
+  text-align: justify;
+}
+.w-head {
+  font-size: 29px;
+  text-align: end;
+}
+.w-inside-text {
+  text-align: center;
+  margin-left: 30px;
+}
+.location {
+  float: left;
+  width: 100%;
+  height: 400px;
+  text-align: center;
+  margin-top: 50px;
+  background-color: aqua;
+  padding-top: 150px;
+}
+
+.rectloc {
+  background-color: #f2f2f2;
+  margin-left: 850px;
+  width: 389px;
+  height: 124px;
+  border-radius: 10px;
+  margin-top: 67px;
+  margin-bottom: 34px;
+  font-size: xx-large;
+  font-family: "Lora", sans-serif;
+  text-align: left;
+}
+
+.footer {
+  width: 100%;
+  padding: 20px;
+  background-color: #f0f0f0;
+  color: #333;
+  text-align: center;
+  float: left;
+  height: auto;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.footer-icon {
+  width: 30px; /* Set the desired width for the icons */
+  height: 30px; /* Set the desired height for the icons */
+  margin: 0 10px;
+  margin-top: 50px; /* Add spacing between icons */
+}
+.footer-email {
+  font-size: 16px;
+  margin-top: 50px;
+  font-family: "Lora", sans-serif;
+  margin-right: 20px;
+}
