@@ -1,32 +1,31 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(''); // State to hold error messages
-  const navigate = useNavigate();
+  const [error, setError] = useState('');
+  const navigate = useNavigate(); // Use useNavigate hook to get the navigation function
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
       console.log('Logging in with:', username, password);
+
       // Send a POST request to your backend with username and password
-      const response = await fetch('/api/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
+      const response = await axios.post('http://localhost:3000/login', {
+        username, password,
       });
 
-      if (response.ok) {
-        // Successful login, navigate to the admin page
-        navigate('/admin');
-      } else {
-        // Login failed, display an error message
-        setError('Invalid username or password.');
+      if (response.data === 'success-user') {
+        console.log("success");
+        navigate('/admin'); // Use navigate function to redirect
+      } else if (response.data === 'wrongpass') {
+        setError("Wrong Password");
+      } else if (response.data === 'notexist') {
+        // Handle the case when the user does not exist
       }
     } catch (error) {
       console.error('Login error:', error);
@@ -38,7 +37,6 @@ function Login() {
     <div className="login-container">
       <h2>Admin Login</h2>
       <form onSubmit={handleLogin}>
-        {/* Username input */}
         <div>
           <input
             type="text"
@@ -47,7 +45,6 @@ function Login() {
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        {/* Password input */}
         <div>
           <input
             type="password"
@@ -56,9 +53,7 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        {/* Error message */}
         {error && <div className="error">{error}</div>}
-        {/* Submit button */}
         <button type="submit">Login</button>
       </form>
     </div>

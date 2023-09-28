@@ -29,97 +29,28 @@ function Home(){
           <p className="textwork">Our Work</p>
           <div className="cards d-flex justify-content-center gap-3">
             <div className="card">
-              <div
-                id="card-carousel-1"
-                className="carousel slide"
-                data-bs-ride="carousel"
-              >
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
                     <img
                       src="Images/img1.jpg"
                       className="d-block w-100"
                       alt="Card 1"
-                    />
-                  </div>
-                  <div className="carousel-item">
-                    <img
-                      src="Images/img2.jpg"
-                      className="d-block w-100"
-                      alt="Card 2"
-                    />
-                  </div>
-                  <div className="carousel-item">
-                    <img
-                      src="Images/img3.jpg"
-                      className="d-block w-100"
-                      alt="Card 3"
-                    />
-                  </div>
-                </div>
-              </div>
+                    />                
             </div>
             <div className="card">
-              <div
-                id="card-carousel-2"
-                className="carousel slide"
-                data-bs-ride="carousel"
-              >
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
-                    <img
-                      src="Images/img1.jpg"
-                      className="d-block w-100"
-                      alt="Card 1"
-                    />
-                  </div>
-                  <div className="carousel-item">
                     <img
                       src="Images/img2.jpg"
                       className="d-block w-100"
                       alt="Card 2"
                     />
-                  </div>
-                  <div className="carousel-item">
-                    <img
-                      src="Images/img3.jpg"
-                      className="d-block w-100"
-                      alt="Card 3"
-                    />
-                  </div>
-                </div>
-              </div>
             </div>
             <div className="card">
-              <div
-                id="card-carousel-3"
-                className="carousel slide"
-                data-bs-ride="carousel"
-              >
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
-                    <img
-                      src="Images/img1.jpg"
-                      className="d-block w-100"
-                      alt="Card 1"
-                    />
-                  </div>
-                  <div className="carousel-item">
-                    <img
-                      src="Images/img2.jpg"
-                      className="d-block w-100"
-                      alt="Card 2"
-                    />
-                  </div>
-                  <div className="carousel-item">
                     <img
                       src="Images/img3.jpg"
                       className="d-block w-100"
                       alt="Card 3"
                     />
-                  </div>
-                </div>
-              </div>
+                  
+                
+              
             </div>
           </div>
           <div className="cards2-container">
